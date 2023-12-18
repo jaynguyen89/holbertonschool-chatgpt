@@ -1,0 +1,19 @@
+The below python code that is delimited in the triple quotes incorrectly returns final grades for students with score of 85.
+Please identity the issue and fix the code.
+"""
+def graduate:
+    grade = ‘Unknown’
+    if mark < 50:
+        grade = ‘Not yet successful’
+    elif mark >=50 and mark <= 60:
+        grade = ‘Pass’
+    elif mark > 60 and mark <= 75:
+        grade = ‘Credit’
+    elif mark > 75 and mark < 85:
+        grade = ‘Distinction’
+    elif mark > 85:
+        grade = ‘High Distinction’
+    else:
+        grade = ‘Unknown’
+    return grade
+"""

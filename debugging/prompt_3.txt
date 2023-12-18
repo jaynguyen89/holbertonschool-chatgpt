@@ -1,0 +1,2 @@
+Based on the code that has been refactored, write a documentation for it.
+Please include any assumptions that the code might have.

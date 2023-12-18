@@ -1,0 +1,36 @@
+Based on the OWASP top 10, review the below code delimited by triple quotes to check for the vulnerabilities.
+If there is any vulnerability, give an example for how each could be exploited on the provided code.
+Then fix the code so that all vulnerabilities are mitigated.
+"""
+def get_customer_daily_sales(customer_code):
+    # Get sql db connection
+    sql_con = get_sql_connection()
+
+    # Create a cursor
+    cur = sql_con.cursor()
+
+     # Produce query to get customer average sales
+     query = f"""
+         SELECT
+                o.CustomerName,
+                CAST(o.OrderDt AS DATE) AS OrderDate,
+                SUM(o.OrderTotal) AS DailyTotal
+            FROM dbo.Orders AS o
+            INNER JOIN dbo.Customers AS c
+                on o.CustomerKey = c.CustomerKey
+            AND c.CustomerCode = '{customer_code}'
+            GROUP BY o.CustomerName, CAST(o.OrderDt as DATE);
+     """
+
+    # Execute the query
+    cur.execute(query)
+
+    # Collect query result
+    result = cur.fetchall()
+
+    # Close the connection
+    sql_con.close()
+
+    # Return the result
+    return result
+"""

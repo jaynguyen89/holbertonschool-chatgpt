@@ -1,0 +1,7 @@
+Based on the code that has been refactored, write the python test cases to verify the following requirements:
+- When `mark` is 0 to 49, it returns "Not yet successful"
+- When `mark` is 50 to 60, it returns "Pass"
+- When `mark` is 61 to 75, it returns "Credit"
+- When `mark` is 76 to 85, it returns "Distinction"
+- When `mark` is 86 to 100, it returns "High Distinction"
+Also, write 1 more test case to make sure it raises error when `mark` is outside range 0 to 100.
